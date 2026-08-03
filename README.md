@@ -10,17 +10,65 @@ A generic, production-ready **Kotlin Multiplatform Mobile (KMM) & Desktop Econom
 
 ---
 
+## 🛠️ Prerequisites & Package Manager Installation
+
+Before building or running the application, ensure you have **Java JDK 17+** and **Gradle** installed.
+
+### **1. Install Dependencies**
+
+#### 🍏 macOS & 🐧 Linux (Homebrew)
+```bash
+# Update Homebrew and install JDK 17 & Gradle
+brew update
+brew install openjdk@17 gradle
+
+# (macOS optional) Set up system Java symlink if needed
+sudo ln -sfn $(brew --prefix)/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
+```
+
+#### 🪟 Windows (Chocolatey)
+```cmd
+:: Run Command Prompt or PowerShell as Administrator
+choco install openjdk17 gradle
+```
+
+---
+
+### **2. Clone & Navigate to Project Root**
+
+#### 🍏 macOS & 🐧 Linux
+```bash
+git clone https://github.com/brentmzey/econometric_archetype_kmp.git
+cd econometric_archetype_kmp
+```
+
+#### 🪟 Windows (Command Prompt / PowerShell)
+```cmd
+git clone https://github.com/brentmzey/econometric_archetype_kmp.git
+cd econometric_archetype_kmp
+```
+
+---
+
 ## ⚡ Root Build, Test, & Execution Commands
 
-Run these single-line commands directly from the project root (`/Users/brentzey/personal/econometric_archetype_kmp`):
+Run these commands from the project root directory (`./econometric_archetype_kmp` or `%USERPROFILE%\econometric_archetype_kmp`):
 
 ### **1. Run Full Unit & Integration Test Suite**
 ```bash
+# Linux / macOS
+gradle test
+
+# Windows (CMD / PowerShell)
 gradle test
 ```
 
 ### **2. Build All Targets & Executable Fat JAR**
 ```bash
+# Linux / macOS
+gradle build
+
+# Windows (CMD / PowerShell)
 gradle build
 ```
 
@@ -35,6 +83,13 @@ gradle run
 
 ### **4. Ultimate One-Liner (Test + Build + Run)**
 ```bash
+# Linux / macOS (Bash / Zsh)
+gradle test && gradle build && java -jar build/libs/econometric_archetype_kmp-1.0.0.jar
+
+# Windows (PowerShell)
+gradle test; gradle build; java -jar build/libs/econometric_archetype_kmp-1.0.0.jar
+
+# Windows (CMD)
 gradle test && gradle build && java -jar build/libs/econometric_archetype_kmp-1.0.0.jar
 ```
 
